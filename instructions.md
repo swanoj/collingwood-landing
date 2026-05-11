@@ -49,3 +49,15 @@ This file is for **you** and for **Cursor**: keep it updated as decisions land.
 ## Legal / content
 
 - Ship **Easey's**-approved logo lockups, photography, and menu wording. Keep spelling and the mark consistent across site, print, and social.
+
+## Site architecture (App Router — not `pages/`)
+
+| Route | File | Role |
+|-------|------|------|
+| `/` | [`app/page.tsx`](file:///Users/oliver/collingwood-landing/app/page.tsx) | Landing: [`Hero.tsx`](file:///Users/oliver/collingwood-landing/components/Hero.tsx) + [`MealScrollSection.tsx`](file:///Users/oliver/collingwood-landing/components/MealScrollSection.tsx) |
+| `/menu` | [`app/menu/page.tsx`](file:///Users/oliver/collingwood-landing/app/menu/page.tsx) | [`MenuGrid.tsx`](file:///Users/oliver/collingwood-landing/components/MenuGrid.tsx) — receipt list + sticky preview |
+| `/train` | [`app/train/page.tsx`](file:///Users/oliver/collingwood-landing/app/train/page.tsx) | **48 EASEY ST** — charcoal + blueprint cards |
+| `/bookings` | [`app/bookings/page.tsx`](file:///Users/oliver/collingwood-landing/app/bookings/page.tsx) | Shell for real booking widget |
+| `/merch` | [`app/merch/page.tsx`](file:///Users/oliver/collingwood-landing/app/merch/page.tsx) | Shell for commerce |
+
+Global chrome: [`layout.tsx`](file:///Users/oliver/collingwood-landing/app/layout.tsx) → [`GrainOverlay.tsx`](file:///Users/oliver/collingwood-landing/components/GrainOverlay.tsx), [`SiteNav.tsx`](file:///Users/oliver/collingwood-landing/components/SiteNav.tsx), [`SiteFooter.tsx`](file:///Users/oliver/collingwood-landing/components/SiteFooter.tsx).

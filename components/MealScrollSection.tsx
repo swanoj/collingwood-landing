@@ -72,10 +72,12 @@ export function MealScrollSection() {
     const offset = () => Math.min(window.innerWidth * 0.42, 520);
 
     const ctx = gsap.context(() => {
+      const ox = offset();
       gsap.set(pin, { backgroundColor: "#f4f1ea" });
       gsap.set(label, { color: "#5c5c5c" });
-      gsap.set(beer, { x: offset(), opacity: 0.25 });
-      gsap.set(chips, { x: -offset(), opacity: 0.25 });
+      /* Fly from corners toward the centre burger */
+      gsap.set(beer, { x: ox, y: ox * 0.28, opacity: 0.2 });
+      gsap.set(chips, { x: -ox, y: -ox * 0.22, opacity: 0.2 });
 
       gsap
         .timeline({
@@ -91,8 +93,8 @@ export function MealScrollSection() {
         })
         .to(pin, { backgroundColor: "#161616", ease: "none" }, 0)
         .to(label, { color: "#f4f1ea", ease: "none" }, 0)
-        .to(beer, { x: 0, opacity: 1, ease: "none" }, 0)
-        .to(chips, { x: 0, opacity: 1, ease: "none" }, 0);
+        .to(beer, { x: 0, y: 0, opacity: 1, ease: "none" }, 0)
+        .to(chips, { x: 0, y: 0, opacity: 1, ease: "none" }, 0);
     }, root);
 
     const onResize = () => ScrollTrigger.refresh();

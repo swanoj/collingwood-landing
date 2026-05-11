@@ -1,11 +1,11 @@
-import { HeroScene } from "@/components/HeroScene";
+import { Hero } from "@/components/Hero";
 import { MealScrollSection } from "@/components/MealScrollSection";
 
 export default function Home() {
   return (
-    <main>
-      <HeroScene />
+    <>
+      <Hero />
       <MealScrollSection />
-    </main>
+    </>
   );
 }

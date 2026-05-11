@@ -6,6 +6,16 @@
 
 Project path: **`/Users/oliver/collingwood-landing`** (sibling to `sniperform-landing`, its own git repo).
 
+## Routes
+
+| Path | Description |
+|------|-------------|
+| `/` | Hero (marquee + video sandwich + parallax) + GSAP “Spread” |
+| `/menu` | Two-column menu + hover spray drip |
+| `/train` | 48 EASEY ST — train + red stripe room |
+| `/bookings` | Booking shell |
+| `/merch` | Merch shell |
+
 ## Commands
 
 ```bash

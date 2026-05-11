@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Anton, Courier_Prime, Geist, Geist_Mono } from "next/font/google";
+import { GrainOverlay } from "@/components/GrainOverlay";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteNav } from "@/components/SiteNav";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,7 +35,7 @@ export const metadata: Metadata = {
     template: "%s | Easey's",
   },
   description:
-    "Easey's — burgers and beers with rooftop energy. Big flavour, bold type, and a hero that moves with you.",
+    "Easey's — industrial rooftop burgers & beers. Collingwood energy, newsprint palette, train-room functions.",
 };
 
 export default function RootLayout({
@@ -45,7 +48,14 @@ export default function RootLayout({
       lang="en-AU"
       className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${courier.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-transparent text-ink antialiased">{children}</body>
+      <body className="min-h-full bg-transparent text-ink">
+        <GrainOverlay />
+        <div className="relative z-[2] flex min-h-screen flex-col bg-transparent">
+          <SiteNav />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </div>
+      </body>
     </html>
   );
 }
