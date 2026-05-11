@@ -1,11 +1,5 @@
-import { Hero } from "@/components/Hero";
-import { MealScrollSection } from "@/components/MealScrollSection";
+import { HomeView } from "@/components/home/HomeView";
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <MealScrollSection />
-    </>
-  );
+  return <HomeView />;
 }

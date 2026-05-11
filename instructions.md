@@ -54,10 +54,20 @@ This file is for **you** and for **Cursor**: keep it updated as decisions land.
 
 | Route | File | Role |
 |-------|------|------|
-| `/` | [`app/page.tsx`](file:///Users/oliver/collingwood-landing/app/page.tsx) | Landing: [`Hero.tsx`](file:///Users/oliver/collingwood-landing/components/Hero.tsx) + [`MealScrollSection.tsx`](file:///Users/oliver/collingwood-landing/components/MealScrollSection.tsx) |
-| `/menu` | [`app/menu/page.tsx`](file:///Users/oliver/collingwood-landing/app/menu/page.tsx) | [`MenuGrid.tsx`](file:///Users/oliver/collingwood-landing/components/MenuGrid.tsx) — receipt list + sticky preview |
-| `/train` | [`app/train/page.tsx`](file:///Users/oliver/collingwood-landing/app/train/page.tsx) | **48 EASEY ST** — charcoal + blueprint cards |
-| `/bookings` | [`app/bookings/page.tsx`](file:///Users/oliver/collingwood-landing/app/bookings/page.tsx) | Shell for real booking widget |
-| `/merch` | [`app/merch/page.tsx`](file:///Users/oliver/collingwood-landing/app/merch/page.tsx) | Shell for commerce |
+| `/` | [`app/page.tsx`](file:///Users/oliver/collingwood-landing/app/page.tsx) | [`HomeView.tsx`](file:///Users/oliver/collingwood-landing/components/home/HomeView.tsx) — masthead, hero video, editorial, cutouts, [`SpreadShowcase.tsx`](file:///Users/oliver/collingwood-landing/components/home/SpreadShowcase.tsx), [`MealScrollSection.tsx`](file:///Users/oliver/collingwood-landing/components/MealScrollSection.tsx), locations, functions, marquee |
+| `/menu` | [`app/menu/page.tsx`](file:///Users/oliver/collingwood-landing/app/menu/page.tsx) | [`MenuGrid.tsx`](file:///Users/oliver/collingwood-landing/components/MenuGrid.tsx) |
+| `/order` | [`app/order/page.tsx`](file:///Users/oliver/collingwood-landing/app/order/page.tsx) | Location list + placeholder outbound links + `order_click` analytics |
+| `/locations` | [`app/locations/page.tsx`](file:///Users/oliver/collingwood-landing/app/locations/page.tsx) | Four-up cards |
+| `/locations/[slug]` | [`app/locations/[slug]/page.tsx`](file:///Users/oliver/collingwood-landing/app/locations/[slug]/page.tsx) | Collingwood, CBD, Footscray, South Yarra — data from [`src/content/locations.ts`](file:///Users/oliver/collingwood-landing/src/content/locations.ts) |
+| `/functions` | [`app/functions/page.tsx`](file:///Users/oliver/collingwood-landing/app/functions/page.tsx) | Copy + [`EnquiryForm`](file:///Users/oliver/collingwood-landing/components/EnquiryForm.tsx) |
+| `/reservations` | [`app/reservations/page.tsx`](file:///Users/oliver/collingwood-landing/app/reservations/page.tsx) | Booking widget shell (TBC) |
+| `/shop`, `/gift-cards` | `app/shop/page.tsx`, `app/gift-cards/page.tsx` | Commerce / cards — shells (TBC) |
+| `/about`, `/contact`, `/careers`, `/faqs` | `app/*/page.tsx` | Editorial + forms + [`src/content/faqs.ts`](file:///Users/oliver/collingwood-landing/src/content/faqs.ts) |
+| `/privacy`, `/terms`, `/accessibility` | `app/*/page.tsx` | Legal placeholders |
+| `not-found` | [`app/not-found.tsx`](file:///Users/oliver/collingwood-landing/app/not-found.tsx) | On-brand 404 |
+
+Redirects in [`next.config.ts`](file:///Users/oliver/collingwood-landing/next.config.ts): `/train` → `/functions`, `/bookings` → `/reservations`, `/merch` → `/shop`.
+
+**Content:** [`src/content/`](file:///Users/oliver/collingwood-landing/src/content/) — `site.ts`, `locations.ts`, `menu.ts`, `functions.ts`, `faqs.ts`, `social.ts`. **Analytics:** [`lib/analytics.ts`](file:///Users/oliver/collingwood-landing/lib/analytics.ts) (`dataLayer` pushes).
 
 Global chrome: [`layout.tsx`](file:///Users/oliver/collingwood-landing/app/layout.tsx) → [`GrainOverlay.tsx`](file:///Users/oliver/collingwood-landing/components/GrainOverlay.tsx), [`SiteNav.tsx`](file:///Users/oliver/collingwood-landing/components/SiteNav.tsx), [`SiteFooter.tsx`](file:///Users/oliver/collingwood-landing/components/SiteFooter.tsx).
