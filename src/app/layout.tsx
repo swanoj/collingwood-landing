@@ -38,7 +38,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-AU" className={`${geistSans.variable} ${anton.variable} ${courier.variable} h-full antialiased`}>
-      <body className="min-h-full bg-bg font-sans text-ink">{children}</body>
+      <body className="min-h-full bg-bg font-sans text-ink">
+        <div className="easeys-global-noise pointer-events-none fixed inset-0 z-0" aria-hidden />
+        <div className="relative z-[1]">{children}</div>
+      </body>
     </html>
   );
 }

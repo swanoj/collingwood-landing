@@ -25,7 +25,7 @@ export default function HomePage() {
         <UtilityHeader variant="overlay" />
       </div>
 
-      <Section theme="default">
+      <Section theme="default" rule="top">
         <p data-reveal className="font-[family-name:var(--font-courier)] text-meta text-muted">
           Manifesto
         </p>
@@ -46,7 +46,7 @@ export default function HomePage() {
         </p>
       </Section>
 
-      <Section theme="accented" id="featured">
+      <Section theme="accented" id="featured" rule="top">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <h2 data-reveal className="font-[family-name:var(--font-anton)] text-section-h2 uppercase text-ink">
             Featured posters
@@ -59,7 +59,7 @@ export default function HomePage() {
             Full food menu →
           </Link>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <div className="mt-12 grid auto-rows-fr gap-6 sm:grid-cols-2 sm:items-stretch">
           {featuredMenuPosters.map((item) => (
             <CutoutCard
               key={item.id}

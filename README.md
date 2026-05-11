@@ -32,6 +32,7 @@ CLI (optional): `npx vercel --prod`
 |------|--------|
 | Address, hours, phone, email, **status strip** (mono identity line), outbound URLs, vouchers, `/order` microcopy | `src/content/site.ts` (header + footer) |
 | Shared menu row UI (Food + Drinks) | `src/components/PosterRow.tsx` |
+| Section stack + optional printed rules (`rule="top" \| "bottom" \| "both"`) | `src/components/Section.tsx` |
 | Nav labels + paths | `src/content/routes.ts` |
 | Food menu (categories + items) | `src/content/menu.ts` — **ONLINE MENU SEED**; replace with dine-in PDF when final |
 | Drinks | `src/content/drinks.ts` |
