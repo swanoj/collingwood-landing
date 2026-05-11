@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* Design tokens — Gourou-like poster / zine */
+:root {
+  --bg: #f5f1e8;
+  --ink: #0b0b0c;
+  --muted: rgba(11, 11, 12, 0.65);
+  --faint: rgba(11, 11, 12, 0.12);
+  --accent: #ffc107;
+  --accent2: #e11d48;
+  --background: var(--bg);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent2: var(--accent2);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-courier), "Courier New", Courier, ui-monospace, monospace;
+  --font-display: var(--font-anton), ui-sans-serif, system-ui, sans-serif;
+}
+
+@source "../../src/**/*.{js,ts,jsx,tsx}";
+
+html {
+  scroll-behavior: smooth;
+  min-height: 100%;
+  background-color: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Marquee */
+@keyframes easeys-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.easeys-marquee {
+  animation: easeys-marquee 45s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .easeys-marquee {
+    animation: none;
+  }
+}
+
+/* Type scale helpers (prompt) */
+.text-masthead {
+  font-size: clamp(3rem, 8vw, 8.75rem);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+}
+
+.text-section-h2 {
+  font-size: clamp(1.75rem, 4vw, 4rem);
+  line-height: 0.95;
+}
+
+.text-meta {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

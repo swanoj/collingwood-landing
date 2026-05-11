@@ -1,48 +1,59 @@
-# collingwood-landing (Easey's)
+# Easey’s — marketing site (Next.js 16)
 
-**Easey's** — Next.js marketing shell: **cream / mega-type** hero, **React Three Fiber** placeholder burger (swap in `public/models/burger.glb` later), **MP4 fallbacks** under `public/hero/`, and **`prefers-reduced-motion`** support.
-
-## Location
-
-Project path: **`/Users/oliver/collingwood-landing`** (sibling to `sniperform-landing`, its own git repo).
-
-## Routes
-
-| Path | Description |
-|------|-------------|
-| `/` | Hero (marquee + video sandwich + parallax) + GSAP “Spread” |
-| `/menu` | Two-column menu + hover spray drip |
-| `/train` | 48 EASEY ST — train + red stripe room |
-| `/bookings` | Booking shell |
-| `/merch` | Merch shell |
-
-## Commands
-
-```bash
-cd /Users/oliver/collingwood-landing
-npm run dev
-npm run build
-npm run lint
-```
-
-## Docs
-
-- **[instructions.md](./instructions.md)** — brand tokens, tone, asset checklist (source of truth for Cursor).
+Poster-style, typography-first rebuild (Gourou-inspired chassis): utility header/footer, stacked editorial sections, GSAP scroll moments, local TypeScript content.
 
 ## Stack
 
-- Next.js 16 (App Router), React 19, Tailwind CSS v4
-- `three`, `@react-three/fiber`, `@react-three/drei`
-- `gsap` (installed for future ScrollTrigger / DOM motion; hero currently R3F + CSS)
+- **Next.js 16** (App Router) · **React 19** · **TypeScript**
+- **Tailwind CSS v4** (`src/styles/globals.css` + `@theme`)
+- **GSAP** + **ScrollTrigger** (`src/lib/gsap.ts`)
+- **Fonts:** Anton, Geist, Courier Prime (`src/app/layout.tsx`)
 
-## Assets
+## Run locally
 
-| Path | Purpose |
-|------|---------|
-| `public/hero/result.mp4` | Primary fallback video (copied from Downloads when scaffolded) |
-| `public/hero/burger-generated.mp4` | Secondary MP4 source |
-| `public/models/burger.glb` | Optional real burger mesh (add when ready) |
+```bash
+npm install
+npm run dev
+```
 
-## Fonts
+Open [http://localhost:3000](http://localhost:3000).
 
-Anton (display), Courier Prime (mono labels), Geist Sans / Mono (UI) — wired in `app/layout.tsx` and CSS variables in `app/globals.css`.
+## Deploy (Vercel)
+
+1. Push this repo to GitHub.
+2. Import the repo in [Vercel](https://vercel.com) (framework: Next.js, root `.`, build `next build`, output default).
+3. Production deploys on every push to the connected branch.
+
+CLI (optional): `npx vercel --prod`
+
+## Edit content & links
+
+| What | Where |
+|------|--------|
+| Address, hours, phone, email, outbound order URLs, booking embed URL, vouchers link | `src/content/site.ts` |
+| Nav labels + paths | `src/content/routes.ts` |
+| Food menu (categories + items) | `src/content/menu.ts` — **ONLINE MENU SEED**; replace with dine-in PDF when final |
+| Drinks | `src/content/drinks.ts` |
+| Functions copy + packages | `src/content/functions.ts` |
+| Royal CC copy | `src/content/royalCc.ts` |
+| Reservation “good to know” bullets | `src/content/faqs.ts` |
+
+## Media
+
+- **Hero video:** add `public/hero.mp4` (H.264 + AAC, muted loop). Until then, poster `public/images/hero-poster.svg` shows under the overlay.
+- **Cutouts:** `public/cutouts/*.svg` (transparent); swap for PNG when you have photography.
+
+## Analytics (`dataLayer`)
+
+`src/lib/analytics.ts` pushes: `order_click` (with `provider`, `mode`), `reservation_click`, `function_enquiry_submit`, `contact_submit`, `phone_click`, `email_click`.
+
+## Routes
+
+`/`, `/food`, `/drinks`, `/order`, `/reservations`, `/functions`, `/royal-easeys-cc`, `/shop`, `/vouchers`, `/contact`, plus `sitemap.xml`. Legacy URLs redirect in `next.config.ts` (e.g. `/menu` → `/food`).
+
+## Replace later
+
+- Dine-in **PDF menu** as source of truth (swap `menu.ts` or wire a CMS).
+- Real **booking** iframe URL (`site.reservationsEmbedUrl`).
+- Confirmed **pickup / delivery** provider URLs and naming.
+- **Commerce** for shop + vouchers providers.
