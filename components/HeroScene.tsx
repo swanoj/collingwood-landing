@@ -1,110 +1,57 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { useEffect, useRef, useState } from "react";
-
-const BurgerCanvas = dynamic(
-  () => import("@/components/BurgerCanvas").then((m) => ({ default: m.BurgerCanvas })),
-  {
-    ssr: false,
-    loading: () => (
-      <div
-        className="mx-auto h-[min(55vh,520px)] w-full max-w-lg animate-pulse rounded-3xl bg-ink/[0.06]"
-        aria-hidden
-      />
-    ),
-  },
-);
-
-function VideoFallback() {
-  return (
-    <video
-      className="mx-auto h-[min(55vh,520px)] w-full max-w-lg object-contain"
-      autoPlay
-      muted
-      playsInline
-      loop
-      preload="metadata"
-    >
-      <source src="/hero/result.mp4" type="video/mp4" />
-      <source src="/hero/burger-generated.mp4" type="video/mp4" />
-    </video>
-  );
-}
+import { HeroBurgerVideo } from "@/components/HeroBurgerVideo";
 
 export function HeroScene() {
-  const mouseRef = useRef({ x: 0, y: 0 });
-  const stageRef = useRef<HTMLDivElement>(null);
-
-  const [preferVideo, setPreferVideo] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setPreferVideo(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-
-  useEffect(() => {
-    if (preferVideo !== false) return;
-    const el = stageRef.current;
-    if (!el) return;
-    const onMove = (e: PointerEvent) => {
-      const rect = el.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-      const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
-      mouseRef.current.x = Math.max(-1, Math.min(1, x));
-      mouseRef.current.y = Math.max(-1, Math.min(1, y));
-    };
-    el.addEventListener("pointermove", onMove);
-    return () => el.removeEventListener("pointermove", onMove);
-  }, [preferVideo]);
-
   return (
     <section
-      ref={stageRef}
       id="top"
-      className="sf-paper-noise relative isolate overflow-hidden border-b border-cream-deep pb-16 pt-10 md:pb-20 md:pt-14"
+      className="sf-paper-noise relative isolate overflow-hidden border-b border-cream-deep pb-14 pt-10 md:pb-20 md:pt-14"
     >
-      <p className="relative z-10 mx-auto max-w-6xl px-4 text-center font-mono text-xs font-bold uppercase tracking-[0.28em] text-muted">
-        Burgers · beers · way above street level
-      </p>
+      <h1 className="sr-only">Easey&apos;s Burgers &amp; Beers</h1>
 
-      <h1 className="pointer-events-none relative z-0 mx-auto mt-2 max-w-[1100px] px-2 text-center font-[family-name:var(--font-anton)] text-[clamp(3.25rem,12vw,8.5rem)] leading-[0.92] tracking-tight text-ink/90">
-        {"EASEY\u2019S"}
-        <span className="block text-accent-red">BURGERS &amp; BEERS</span>
-      </h1>
+      <div className="relative z-30 mx-auto max-w-6xl px-4 text-center">
+        <p className="font-mono text-xs font-bold uppercase tracking-[0.28em] text-muted">
+          Burgers · beers · way above street level
+        </p>
+      </div>
 
-      <p className="relative z-20 mx-auto mt-6 max-w-xl px-4 text-center text-lg leading-relaxed text-muted md:text-xl">
+      {/* Mega type BEHIND the burger (Royal Beverage–style depth) */}
+      <div className="relative z-10 mx-auto mt-4 flex min-h-[min(58vh,560px)] w-full max-w-6xl flex-col items-center justify-center px-2 md:min-h-[min(62vh,620px)]">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-[42%] z-10 w-[110%] max-w-[1200px] -translate-x-1/2 -translate-y-1/2 select-none text-center font-[family-name:var(--font-anton)] text-[clamp(3.5rem,14.5vw,10.5rem)] font-normal uppercase leading-[0.82] tracking-[-0.045em] text-ink/[0.14] md:top-[44%] md:w-full md:tracking-[-0.055em]"
+        >
+          {"EASEY\u2019S"}
+        </div>
+
+        <div className="relative z-20 flex w-full max-w-[min(92vw,520px)] flex-col items-center">
+          <HeroBurgerVideo className="relative w-full object-contain drop-shadow-[0_28px_50px_rgb(0_0_0_/_0.12)]" />
+          <p
+            aria-hidden
+            className="mt-2 text-center font-[family-name:var(--font-anton)] text-[clamp(1.75rem,5.5vw,2.75rem)] font-normal uppercase leading-none tracking-[-0.04em] text-accent-red"
+          >
+            BURGERS &amp; BEERS
+          </p>
+        </div>
+      </div>
+
+      <div className="relative z-30 mx-auto mt-8 max-w-xl px-4 text-center text-lg leading-relaxed text-muted md:text-xl">
         Big burgers, cold tins, and a view that earns the climb — Easey&apos;s is the feed before the night rolls on.
-      </p>
+      </div>
 
-      <p className="relative z-20 mx-auto mt-3 max-w-xl px-4 text-center font-mono text-sm font-bold uppercase tracking-[0.2em] text-accent-red">
+      <p className="relative z-30 mx-auto mt-3 max-w-xl px-4 text-center font-mono text-sm font-bold uppercase tracking-[0.2em] text-accent-red">
         Come hungry. Leave loud.
       </p>
 
-      <div className="relative z-20 mx-auto mt-10 max-w-6xl px-4">
-        {preferVideo === null ? (
-          <div
-            className="mx-auto h-[min(55vh,520px)] w-full max-w-lg animate-pulse rounded-3xl bg-ink/[0.06]"
-            aria-hidden
-          />
-        ) : preferVideo ? (
-          <VideoFallback />
-        ) : (
-          <BurgerCanvas mouseRef={mouseRef} />
-        )}
-      </div>
-
-      <p className="relative z-20 mx-auto mt-10 max-w-6xl px-4 text-center font-mono text-[0.7rem] uppercase tracking-[0.35em] text-muted">
+      <p className="relative z-30 mx-auto mt-10 max-w-6xl px-4 text-center font-mono text-[0.7rem] uppercase tracking-[0.35em] text-muted">
         Scroll
       </p>
 
-      <p className="mx-auto mt-16 max-w-2xl px-4 text-center text-sm text-muted">
-        Update hours, bookings, and delivery links in the next sections when you add them. Drop{" "}
-        <code className="font-mono text-ink">public/models/burger.glb</code> when the mesh is ready to replace the
-        placeholder.
+      <p className="relative z-30 mx-auto mt-14 max-w-2xl px-4 text-center text-sm text-muted">
+        Hero uses <code className="font-mono text-ink">/hero/result.mp4</code> (then <code className="font-mono text-ink">burger-generated</code>). Add{" "}
+        <code className="font-mono text-ink">/hero/beer.mp4</code> and <code className="font-mono text-ink">/hero/chips.mp4</code> for the scroll meal
+        scene — placeholders show until files exist.
       </p>
     </section>
   );

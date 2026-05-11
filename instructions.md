@@ -38,8 +38,9 @@ This file is for **you** and for **Cursor**: keep it updated as decisions land.
 
 ## Assets
 
-- **Video:** `public/hero/result.mp4`, `public/hero/burger-generated.mp4` — hero loop vs secondary use.
-- **Model:** `public/models/burger.glb` — web-optimized GLB when ready.
+- **Hero burger (Firefly / matte on `#F4F1EA`):** `public/hero/result.mp4` (primary), `public/hero/burger-generated.mp4` (alternate). Use `object-contain`, `autoplay` + `loop` + `muted` + `playsInline`.
+- **Scroll meal scene:** `public/hero/beer.mp4` and `public/hero/chips.mp4` — GSAP ScrollTrigger flies them in beside the pinned centre burger. Until files exist, labelled placeholders render.
+- **Model (optional later):** `public/models/burger.glb` — web-optimized GLB if you return to a real-time mesh.
 
 ## Legal / content
 
