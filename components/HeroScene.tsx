@@ -72,12 +72,12 @@ export function HeroScene() {
       </p>
 
       <h1 className="pointer-events-none relative z-0 mx-auto mt-2 max-w-[1100px] px-2 text-center font-[family-name:var(--font-anton)] text-[clamp(3.25rem,12vw,8.5rem)] leading-[0.92] tracking-tight text-ink/90">
-        EASYS
+        {"EASEY\u2019S"}
         <span className="block text-accent-red">BURGERS &amp; BEERS</span>
       </h1>
 
       <p className="relative z-20 mx-auto mt-6 max-w-xl px-4 text-center text-lg leading-relaxed text-muted md:text-xl">
-        Big burgers, cold tins, and a view that earns the climb — Easys is the feed before the night rolls on.
+        Big burgers, cold tins, and a view that earns the climb — Easey&apos;s is the feed before the night rolls on.
       </p>
 
       <p className="relative z-20 mx-auto mt-3 max-w-xl px-4 text-center font-mono text-sm font-bold uppercase tracking-[0.2em] text-accent-red">

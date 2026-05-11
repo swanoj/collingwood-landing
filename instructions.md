@@ -1,10 +1,10 @@
-# Easys — brand & build instructions (source of truth)
+# Easey's — brand & build instructions (source of truth)
 
 This file is for **you** and for **Cursor**: keep it updated as decisions land.
 
 ## Product
 
-- **Brand name:** **Easys** (display often **EASYS** in mega-type).
+- **Brand name:** **Easey's** (display often **EASEY’S** in mega-type with a typographic apostrophe).
 - **Pitch:** Burgers and beers, rooftop / high-up energy, Melbourne cheek — comfort food with confidence. Tune specifics (address, hours, booking links) before launch.
 
 ## Visual direction
@@ -43,4 +43,4 @@ This file is for **you** and for **Cursor**: keep it updated as decisions land.
 
 ## Legal / content
 
-- Ship **Easys-owned** logo lockups, photography, and menu wording. If you adjust spelling or add a mark (e.g. stylised logotype), keep it consistent across site, print, and social.
+- Ship **Easey's**-approved logo lockups, photography, and menu wording. Keep spelling and the mark consistent across site, print, and social.

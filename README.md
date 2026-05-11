@@ -1,6 +1,6 @@
-# collingwood-landing (Easys)
+# collingwood-landing (Easey's)
 
-**Easys** — Next.js marketing shell: **cream / mega-type** hero, **React Three Fiber** placeholder burger (swap in `public/models/burger.glb` later), **MP4 fallbacks** under `public/hero/`, and **`prefers-reduced-motion`** support.
+**Easey's** — Next.js marketing shell: **cream / mega-type** hero, **React Three Fiber** placeholder burger (swap in `public/models/burger.glb` later), **MP4 fallbacks** under `public/hero/`, and **`prefers-reduced-motion`** support.
 
 ## Location
 

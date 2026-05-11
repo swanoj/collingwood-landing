@@ -28,11 +28,11 @@ const courier = Courier_Prime({
 
 export const metadata: Metadata = {
   title: {
-    default: "Easys",
-    template: "%s | Easys",
+    default: "Easey's",
+    template: "%s | Easey's",
   },
   description:
-    "Easys — burgers and beers with rooftop energy. Big flavour, bold type, and a hero that moves with you.",
+    "Easey's — burgers and beers with rooftop energy. Big flavour, bold type, and a hero that moves with you.",
 };
 
 export default function RootLayout({
