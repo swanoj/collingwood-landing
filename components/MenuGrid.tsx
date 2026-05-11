@@ -38,11 +38,11 @@ export function MenuGrid() {
         <h1 className="font-[family-name:var(--font-anton)] text-5xl uppercase leading-none tracking-[-0.04em] text-ink md:text-6xl">
           Menu
         </h1>
-        <p className="mt-3 max-w-md font-mono text-sm leading-relaxed text-muted">
-          Receipt-style list. Hover a line for the spray drip.
+        <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">
+          Receipt-style list. Hover a line for a light paint drip.
         </p>
 
-        <ul className="mt-12 space-y-0 font-mono">
+        <ul className="mt-12 space-y-0 font-sans">
           {items.map((item) => (
             <li
               key={item.name}
@@ -62,7 +62,7 @@ export function MenuGrid() {
                 <h2 className="font-[family-name:var(--font-anton)] text-2xl uppercase tracking-[-0.03em] text-ink md:text-3xl">
                   {item.name}
                 </h2>
-                <span className="text-lg font-bold tracking-tight text-accent-red md:text-xl">{item.price}</span>
+                <span className="font-mono text-lg font-bold tracking-tight text-accent-red md:text-xl">{item.price}</span>
               </div>
               <p className="mt-2 pl-4 pr-2 text-sm leading-relaxed text-muted md:text-base">{item.desc}</p>
             </li>

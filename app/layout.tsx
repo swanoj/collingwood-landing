@@ -48,7 +48,7 @@ export default function RootLayout({
       lang="en-AU"
       className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${courier.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-transparent text-ink">
+      <body className="min-h-full bg-transparent font-sans text-ink">
         <GrainOverlay />
         <div className="relative z-[2] flex min-h-screen flex-col bg-transparent">
           <SiteNav />
