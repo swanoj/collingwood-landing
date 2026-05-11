@@ -11,8 +11,8 @@ import { featuredMenuPosters } from "@/content/menu";
 
 const spreadCards = featuredMenuPosters.slice(0, 5).map((d) => ({
   id: d.id,
-  title: d.titleLine1,
-  subtitle: d.titleLine2,
+  title: `${d.titleLine1} / ${d.titleLine2}`,
+  subtitle: d.price,
   image: d.image,
   href: d.href,
 }));

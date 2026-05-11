@@ -4,6 +4,8 @@
 export const site = {
   wordmark: "EASEY'S",
   taglineBookings: "Bookings recommended on weekends — walk-ins when we can.",
+  /** Mono “identity strip” under utility meta (Gourou-style). */
+  statusStrip: "COLLINGWOOD / OPEN 7 DAYS / WALK-INS WHEN WE CAN",
   /** Street address as used publicly (level + street). */
   address: "3/48 Easey Street, Collingwood VIC 3066",
   hours: "Open 7 days · 11:00–late (TBC)",

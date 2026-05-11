@@ -6,6 +6,8 @@ import { Button } from "@/components/Button";
 import { mainNav } from "@/content/routes";
 import { site } from "@/content/site";
 
+const labelClass = "block text-[11px] font-[family-name:var(--font-courier)] uppercase tracking-[0.14em] text-bg/50";
+
 export function UtilityFooter() {
   return (
     <footer className="border-t border-faint bg-ink text-bg">
@@ -26,30 +28,30 @@ export function UtilityFooter() {
           </div>
         </div>
 
-        <div className="grid gap-4 border-t border-white/15 pt-8 font-[family-name:var(--font-courier)] text-meta text-bg/70 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-6 gap-y-4 border-t border-white/12 pt-8 font-[family-name:var(--font-courier)] sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="block text-bg/45">Address</span>
-            <span className="mt-1 block font-bold normal-case tracking-normal text-[0.8rem] leading-snug text-bg">{site.address}</span>
+            <span className={labelClass}>Address</span>
+            <span className="mt-1.5 block text-[13px] leading-snug text-bg md:text-[14px]">{site.address}</span>
           </div>
           <div>
-            <span className="block text-bg/45">Hours</span>
-            <span className="mt-1 block font-bold normal-case tracking-normal text-[0.8rem] leading-snug text-bg">{site.hours}</span>
+            <span className={labelClass}>Hours</span>
+            <span className="mt-1.5 block text-[13px] leading-snug text-bg md:text-[14px]">{site.hours}</span>
           </div>
           <div>
-            <span className="block text-bg/45">Phone</span>
+            <span className={labelClass}>Phone</span>
             <a
               href={`tel:${site.phoneTel}`}
-              className="mt-1 block font-bold normal-case tracking-normal text-[0.8rem] text-accent hover:underline"
+              className="mt-1.5 block text-[13px] leading-snug text-accent hover:underline md:text-[14px]"
               onClick={() => analytics.phoneClick()}
             >
               {site.phone}
             </a>
           </div>
           <div>
-            <span className="block text-bg/45">Email</span>
+            <span className={labelClass}>Email</span>
             <a
               href={`mailto:${site.email}`}
-              className="mt-1 block break-all font-bold normal-case tracking-normal text-[0.8rem] text-accent hover:underline"
+              className="mt-1.5 block break-all text-[13px] leading-snug text-accent hover:underline md:text-[14px]"
               onClick={() => analytics.emailClick()}
             >
               {site.email}
@@ -57,15 +59,19 @@ export function UtilityFooter() {
           </div>
         </div>
 
-        <p className="font-[family-name:var(--font-courier)] text-meta text-bg/60">{site.taglineBookings}</p>
+        <p className="border-t border-white/12 pt-3 font-[family-name:var(--font-courier)] text-[11px] uppercase tracking-[0.18em] text-bg/55">
+          {site.statusStrip}
+        </p>
+
+        <p className="font-[family-name:var(--font-courier)] text-[11px] uppercase tracking-[0.12em] text-bg/55">{site.taglineBookings}</p>
 
         <div className="grid gap-10 border-t border-white/15 pt-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <p className="font-[family-name:var(--font-courier)] text-meta text-bg/45">Sitemap</p>
+            <p className="font-[family-name:var(--font-courier)] text-[11px] uppercase tracking-[0.14em] text-bg/45">Sitemap</p>
             <ul className="mt-3 space-y-2 font-[family-name:var(--font-courier)] text-sm text-bg/85">
               {mainNav.map((r) => (
                 <li key={r.href}>
-                  <Link href={r.href} className="hover:text-accent">
+                  <Link href={r.href} className="underline-offset-4 hover:text-accent hover:underline">
                     {r.label}
                   </Link>
                 </li>
@@ -73,22 +79,22 @@ export function UtilityFooter() {
             </ul>
           </div>
           <div>
-            <p className="font-[family-name:var(--font-courier)] text-meta text-bg/45">Social</p>
+            <p className="font-[family-name:var(--font-courier)] text-[11px] uppercase tracking-[0.14em] text-bg/45">Social</p>
             <ul className="mt-3 space-y-2 font-[family-name:var(--font-courier)] text-sm">
               <li>
-                <a href={site.social.instagram} className="text-bg/85 hover:text-accent" target="_blank" rel="noreferrer">
+                <a href={site.social.instagram} className="text-bg/85 underline-offset-4 hover:text-accent hover:underline" target="_blank" rel="noreferrer">
                   Instagram
                 </a>
               </li>
               <li>
-                <a href={site.social.facebook} className="text-bg/85 hover:text-accent" target="_blank" rel="noreferrer">
+                <a href={site.social.facebook} className="text-bg/85 underline-offset-4 hover:text-accent hover:underline" target="_blank" rel="noreferrer">
                   Facebook
                 </a>
               </li>
             </ul>
           </div>
           <div>
-            <p className="font-[family-name:var(--font-courier)] text-meta text-bg/45">Colophon</p>
+            <p className="font-[family-name:var(--font-courier)] text-[11px] uppercase tracking-[0.14em] text-bg/45">Colophon</p>
             <p className="mt-3 font-sans text-sm leading-relaxed text-bg/65">
               Rooftop train. Flat-top smoke. Melbourne. Swap anything marked (TBC) when the real numbers land.
             </p>
