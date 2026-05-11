@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { analytics } from "@/lib/analytics";
 import { Button } from "@/components/Button";
 import { mainNav } from "@/content/routes";
 import { site } from "@/content/site";
@@ -34,13 +37,21 @@ export function UtilityFooter() {
           </div>
           <div>
             <span className="block text-bg/45">Phone</span>
-            <a href={`tel:${site.phoneTel}`} className="mt-1 block font-bold normal-case tracking-normal text-[0.8rem] text-accent hover:underline">
+            <a
+              href={`tel:${site.phoneTel}`}
+              className="mt-1 block font-bold normal-case tracking-normal text-[0.8rem] text-accent hover:underline"
+              onClick={() => analytics.phoneClick()}
+            >
               {site.phone}
             </a>
           </div>
           <div>
             <span className="block text-bg/45">Email</span>
-            <a href={`mailto:${site.email}`} className="mt-1 block break-all font-bold normal-case tracking-normal text-[0.8rem] text-accent hover:underline">
+            <a
+              href={`mailto:${site.email}`}
+              className="mt-1 block break-all font-bold normal-case tracking-normal text-[0.8rem] text-accent hover:underline"
+              onClick={() => analytics.emailClick()}
+            >
               {site.email}
             </a>
           </div>
@@ -79,7 +90,7 @@ export function UtilityFooter() {
           <div>
             <p className="font-[family-name:var(--font-courier)] text-meta text-bg/45">Colophon</p>
             <p className="mt-3 font-sans text-sm leading-relaxed text-bg/65">
-              Poster stack + rooftop train chaos. Replace (TBC) fields in <code className="font-mono text-xs">src/content</code> before launch.
+              Rooftop train. Flat-top smoke. Melbourne. Swap anything marked (TBC) when the real numbers land.
             </p>
           </div>
         </div>

@@ -1,4 +1,7 @@
-type OrderClick = { provider: string; mode?: string };
+type OrderClick = {
+  provider: "orderonline" | "ubereats" | "doordash" | "header" | "hero";
+  mode?: "pickup" | "delivery" | "nav";
+};
 
 declare global {
   interface Window {

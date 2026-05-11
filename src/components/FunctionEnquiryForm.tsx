@@ -54,7 +54,7 @@ export function FunctionEnquiryForm() {
         Send enquiry
       </button>
       {sent ? (
-        <p className="text-center text-meta text-muted">Logged to dataLayer — wire to CRM / email when ready.</p>
+        <p className="text-center text-meta text-muted">Received — we&apos;ll wire this to email soon.</p>
       ) : null}
     </form>
   );

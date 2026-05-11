@@ -30,7 +30,7 @@ CLI (optional): `npx vercel --prod`
 
 | What | Where |
 |------|--------|
-| Address, hours, phone, email, outbound order URLs, booking embed URL, vouchers link | `src/content/site.ts` |
+| Address, hours, phone, email, outbound order URLs, booking embed URL, vouchers link, `/order` microcopy | `src/content/site.ts` (single source of truth for header + footer) |
 | Nav labels + paths | `src/content/routes.ts` |
 | Food menu (categories + items) | `src/content/menu.ts` — **ONLINE MENU SEED**; replace with dine-in PDF when final |
 | Drinks | `src/content/drinks.ts` |

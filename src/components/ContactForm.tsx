@@ -44,7 +44,7 @@ export function ContactForm() {
       >
         Send
       </button>
-      {sent ? <p className="text-center text-meta text-muted">Thanks — dataLayer only until backend exists.</p> : null}
+      {sent ? <p className="text-center text-meta text-muted">Thanks — we&apos;ll get back to you.</p> : null}
     </form>
   );
 }

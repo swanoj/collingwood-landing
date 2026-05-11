@@ -1,19 +1,21 @@
 /**
- * Global venue + outbound links. Edit here — header/footer read from this file.
+ * Canonical venue + outbound links. Header and footer both read from here — edit once.
  */
 export const site = {
   wordmark: "EASEY'S",
   taglineBookings: "Bookings recommended on weekends — walk-ins when we can.",
-  address: "48 Easey St, Collingwood VIC 3066",
+  /** Street address as used publicly (level + street). */
+  address: "3/48 Easey Street, Collingwood VIC 3066",
   hours: "Open 7 days · 11:00–late (TBC)",
   phone: "(03) 9417 2250",
   phoneTel: "+61394172250",
-  email: "hello@easeys.com.au",
+  /** Public-facing inbox (easeys.com.au). */
+  email: "oldmate@easeys.com.au",
   social: {
     instagram: "https://www.instagram.com/easeys/",
     facebook: "https://www.facebook.com/easeys/",
   },
-  /** Placeholder outbound — swap for live HungryHungry / Uber / DoorDash when contracted */
+  /** Real order.online / HungryHungry URL when live */
   order: {
     pickupUrl: "https://www.easeys.com.au/",
     deliveryUberUrl: "https://www.ubereats.com/",
@@ -21,4 +23,10 @@ export const site = {
   },
   reservationsEmbedUrl: null as string | null,
   vouchersUrl: "https://www.easeys.com.au/",
+  /** /order page microcopy */
+  orderPage: {
+    checkoutNote: "You'll checkout with our ordering partners.",
+    pickupMeta: ["Fastest", "No app", "Best for tracking"],
+    deliveryMeta: ["Delivery fees vary (TBC)."],
+  },
 } as const;
