@@ -68,20 +68,20 @@ export function HeroScene() {
       className="sf-paper-noise relative isolate overflow-hidden border-b border-cream-deep pb-16 pt-10 md:pb-20 md:pt-14"
     >
       <p className="relative z-10 mx-auto max-w-6xl px-4 text-center font-mono text-xs font-bold uppercase tracking-[0.28em] text-muted">
-        Burgers · rooftop air · late lights
+        Burgers · beers · way above street level
       </p>
 
       <h1 className="pointer-events-none relative z-0 mx-auto mt-2 max-w-[1100px] px-2 text-center font-[family-name:var(--font-anton)] text-[clamp(3.25rem,12vw,8.5rem)] leading-[0.92] tracking-tight text-ink/90">
-        NIGHT TRAIN
-        <span className="block text-accent-red">BURGERS</span>
+        EASYS
+        <span className="block text-accent-red">BURGERS &amp; BEERS</span>
       </h1>
 
       <p className="relative z-20 mx-auto mt-6 max-w-xl px-4 text-center text-lg leading-relaxed text-muted md:text-xl">
-        Smash patties, cold tins, and a hero that actually moves — built as a Next.js + Three.js playground.
+        Big burgers, cold tins, and a view that earns the climb — Easys is the feed before the night rolls on.
       </p>
 
       <p className="relative z-20 mx-auto mt-3 max-w-xl px-4 text-center font-mono text-sm font-bold uppercase tracking-[0.2em] text-accent-red">
-        Beat the queue.
+        Come hungry. Leave loud.
       </p>
 
       <div className="relative z-20 mx-auto mt-10 max-w-6xl px-4">
@@ -102,8 +102,9 @@ export function HeroScene() {
       </p>
 
       <p className="mx-auto mt-16 max-w-2xl px-4 text-center text-sm text-muted">
-        Replace copy and venue name in <code className="font-mono text-ink">instructions.md</code>. Add{" "}
-        <code className="font-mono text-ink">public/models/burger.glb</code> when the mesh is ready.
+        Update hours, bookings, and delivery links in the next sections when you add them. Drop{" "}
+        <code className="font-mono text-ink">public/models/burger.glb</code> when the mesh is ready to replace the
+        placeholder.
       </p>
     </section>
   );

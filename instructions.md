@@ -1,11 +1,11 @@
-# Brand & build instructions (source of truth)
+# Easys — brand & build instructions (source of truth)
 
 This file is for **you** and for **Cursor**: keep it updated as decisions land.
 
 ## Product
 
-- **Working name:** Night Train Burgers (placeholder — replace with your real venue).
-- **Pitch:** Burgers and cold beer with rooftop energy and a bit of Melbourne cheek — **not** affiliated with any existing venue; references to “train / rooftop / Collingwood” are **mood only**.
+- **Brand name:** **Easys** (display often **EASYS** in mega-type).
+- **Pitch:** Burgers and beers, rooftop / high-up energy, Melbourne cheek — comfort food with confidence. Tune specifics (address, hours, booking links) before launch.
 
 ## Visual direction
 
@@ -15,19 +15,19 @@ This file is for **you** and for **Cursor**: keep it updated as decisions land.
 
 ## Palette (initial tokens)
 
-| Token        | Hex       | Use                                      |
-| ------------ | --------- | ---------------------------------------- |
-| Cream base   | `#f4f1ea` | Page background, hero                    |
-| Ink          | `#1a1a1a` | Body text                                |
-| Accent red   | `#e31e24` | CTAs, key headlines (tune by eye)        |
-| Royal blue   | `#1e3a8a` | Section bands / cards                    |
-| Golden yellow| `#f5c542` | Highlights / cards                       |
-| Emerald      | `#0f6b4d` | Cards / dividers                         |
-| Paper shadow | `#e8e3d9` | Subtle borders                           |
+| Token         | Hex       | Use                               |
+| ------------- | --------- | --------------------------------- |
+| Cream base    | `#f4f1ea` | Page background, hero             |
+| Ink           | `#1a1a1a` | Body text                         |
+| Accent red    | `#e31e24` | CTAs, key headlines (tune by eye) |
+| Royal blue    | `#1e3a8a` | Section bands / cards             |
+| Golden yellow | `#f5c542` | Highlights / cards                |
+| Emerald       | `#0f6b4d` | Cards / dividers                  |
+| Paper shadow  | `#e8e3d9` | Subtle borders                    |
 
 ## Typography
 
-- **Display:** Anton (or similar) — short headlines only, tight leading.
+- **Display:** Anton — short headlines only, tight leading.
 - **Mono / labels:** Courier Prime — tags, metadata, “Scroll”, small UI.
 - **UI body:** Geist Sans — paragraphs and buttons.
 
@@ -38,9 +38,9 @@ This file is for **you** and for **Cursor**: keep it updated as decisions land.
 
 ## Assets
 
-- **Video:** `public/hero/result.mp4`, `public/hero/burger-generated.mp4` — assign roles after review (hero loop vs secondary section).
-- **Model:** `public/models/burger.glb` — web-optimized GLB; see plan for poly / material guidance.
+- **Video:** `public/hero/result.mp4`, `public/hero/burger-generated.mp4` — hero loop vs secondary use.
+- **Model:** `public/models/burger.glb` — web-optimized GLB when ready.
 
-## Legal
+## Legal / content
 
-- Do **not** use Easey’s, Gourou, or Indian Food Company **logos, marks, or photography** as if they were ours.
+- Ship **Easys-owned** logo lockups, photography, and menu wording. If you adjust spelling or add a mark (e.g. stylised logotype), keep it consistent across site, print, and social.

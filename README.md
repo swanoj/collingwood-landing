@@ -1,6 +1,6 @@
-# collingwood-landing
+# collingwood-landing (Easys)
 
-Standalone Next.js marketing shell: **cream / mega-type** hero, **React Three Fiber** placeholder burger (swap in `public/models/burger.glb` later), **MP4 fallbacks** under `public/hero/`, and **`prefers-reduced-motion`** support.
+**Easys** — Next.js marketing shell: **cream / mega-type** hero, **React Three Fiber** placeholder burger (swap in `public/models/burger.glb` later), **MP4 fallbacks** under `public/hero/`, and **`prefers-reduced-motion`** support.
 
 ## Location
 
