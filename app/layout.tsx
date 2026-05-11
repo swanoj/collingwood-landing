@@ -45,7 +45,7 @@ export default function RootLayout({
       lang="en-AU"
       className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} ${courier.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-cream text-ink">{children}</body>
+      <body className="min-h-full bg-transparent text-ink antialiased">{children}</body>
     </html>
   );
 }

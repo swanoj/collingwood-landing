@@ -33,12 +33,12 @@ function VideoOrSlot({
     />
   ) : (
     <div
-      className={`${videoClassName} flex flex-col items-center justify-center rounded-2xl border border-ink/10 bg-ink/[0.04] text-center font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted`}
+      className={`${videoClassName} flex flex-col items-center justify-center rounded-2xl border border-white/15 bg-white/[0.06] text-center font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-cream/80`}
       aria-label={`${label} video placeholder`}
     >
       <span className="max-w-[8rem] px-2">{label}</span>
-      <span className="mt-1 max-w-[9rem] px-2 text-[0.55rem] font-normal normal-case tracking-normal text-muted">
-        Add <code className="text-ink">{src}</code>
+      <span className="mt-1 max-w-[9rem] px-2 text-[0.55rem] font-normal normal-case tracking-normal text-cream/60">
+        Add <code className="text-cream">{src}</code>
       </span>
     </div>
   );
@@ -49,6 +49,7 @@ export function MealScrollSection() {
   const pinRef = useRef<HTMLDivElement>(null);
   const beerRef = useRef<HTMLDivElement>(null);
   const chipsRef = useRef<HTMLDivElement>(null);
+  const labelRef = useRef<HTMLParagraphElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
 
   useLayoutEffect(() => {
@@ -65,11 +66,14 @@ export function MealScrollSection() {
     const pin = pinRef.current;
     const beer = beerRef.current;
     const chips = chipsRef.current;
-    if (!root || !pin || !beer || !chips) return;
+    const label = labelRef.current;
+    if (!root || !pin || !beer || !chips || !label) return;
 
     const offset = () => Math.min(window.innerWidth * 0.42, 520);
 
     const ctx = gsap.context(() => {
+      gsap.set(pin, { backgroundColor: "#f4f1ea" });
+      gsap.set(label, { color: "#5c5c5c" });
       gsap.set(beer, { x: offset(), opacity: 0.25 });
       gsap.set(chips, { x: -offset(), opacity: 0.25 });
 
@@ -85,6 +89,8 @@ export function MealScrollSection() {
             invalidateOnRefresh: true,
           },
         })
+        .to(pin, { backgroundColor: "#161616", ease: "none" }, 0)
+        .to(label, { color: "#f4f1ea", ease: "none" }, 0)
         .to(beer, { x: 0, opacity: 1, ease: "none" }, 0)
         .to(chips, { x: 0, opacity: 1, ease: "none" }, 0);
     }, root);
@@ -100,25 +106,29 @@ export function MealScrollSection() {
 
   if (reduceMotion) {
     return (
-      <section className="border-b border-cream-deep bg-cream py-20">
-        <h2 className="sr-only">Full meal</h2>
+      <section className="border-b border-cream-deep bg-spread-charcoal py-20 text-cream">
+        <h2 className="sr-only">The Spread</h2>
+        <p className="mb-10 text-center font-mono text-[0.65rem] font-bold uppercase tracking-[0.35em] text-cream/70">
+          The Spread
+        </p>
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 px-4 md:flex-row md:justify-center md:gap-6">
           <div className="w-full max-w-[200px] md:max-w-[220px]">
             <VideoOrSlot
               src={chipsSrc}
               label="Chips"
-              videoClassName="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg"
+              videoClassName="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg ring-1 ring-white/15"
             />
           </div>
           <div className="w-full max-w-[240px] md:max-w-[260px]">
             <video
-              className="aspect-[3/4] w-full rounded-2xl object-contain shadow-xl"
+              className="aspect-[3/4] w-full rounded-2xl object-contain shadow-xl ring-1 ring-white/15"
               autoPlay
               muted
               playsInline
               loop
               preload="metadata"
             >
+              <source src="/hero/burger-generated.mp4" type="video/mp4" />
               <source src="/hero/result.mp4" type="video/mp4" />
             </video>
           </div>
@@ -126,12 +136,12 @@ export function MealScrollSection() {
             <VideoOrSlot
               src={beerSrc}
               label="Beer"
-              videoClassName="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg"
+              videoClassName="aspect-[3/4] w-full rounded-2xl object-cover shadow-lg ring-1 ring-white/15"
             />
           </div>
         </div>
-        <p className="mx-auto mt-10 max-w-xl px-4 text-center text-sm text-muted">
-          Reduced motion: meal strip shown static. Full fly-in runs when motion is enabled.
+        <p className="mx-auto mt-10 max-w-xl px-4 text-center text-sm text-cream/70">
+          Reduced motion: static triangle on charcoal. Full fly-in and wash run when motion is enabled.
         </p>
       </section>
     );
@@ -139,13 +149,16 @@ export function MealScrollSection() {
 
   return (
     <section ref={rootRef} className="relative h-[280vh] border-b border-cream-deep bg-cream">
-      <h2 className="sr-only">Full meal</h2>
+      <h2 className="sr-only">The Spread</h2>
       <div
         ref={pinRef}
         className="relative flex h-[100dvh] w-full items-center justify-center gap-1 overflow-hidden px-1 md:gap-4 md:px-8"
       >
-        <p className="absolute left-1/2 top-8 z-30 -translate-x-1/2 text-center font-mono text-[0.65rem] font-bold uppercase tracking-[0.35em] text-muted md:top-10">
-          The full spread
+        <p
+          ref={labelRef}
+          className="absolute left-1/2 top-8 z-30 w-full max-w-xl -translate-x-1/2 text-center font-mono text-[0.65rem] font-bold uppercase tracking-[0.35em] md:top-10"
+        >
+          The Spread
         </p>
 
         <div
@@ -155,7 +168,7 @@ export function MealScrollSection() {
           <VideoOrSlot
             src={chipsSrc}
             label="Chips"
-            videoClassName="aspect-[3/4] w-full rounded-2xl object-cover shadow-2xl ring-1 ring-ink/10"
+            videoClassName="aspect-[3/4] w-full rounded-2xl object-cover shadow-2xl ring-1 ring-black/10"
           />
         </div>
 
@@ -168,8 +181,8 @@ export function MealScrollSection() {
             loop
             preload="metadata"
           >
-            <source src="/hero/result.mp4" type="video/mp4" />
             <source src="/hero/burger-generated.mp4" type="video/mp4" />
+            <source src="/hero/result.mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -180,7 +193,7 @@ export function MealScrollSection() {
           <VideoOrSlot
             src={beerSrc}
             label="Beer"
-            videoClassName="aspect-[3/4] w-full rounded-2xl object-cover shadow-2xl ring-1 ring-ink/10"
+            videoClassName="aspect-[3/4] w-full rounded-2xl object-cover shadow-2xl ring-1 ring-black/10"
           />
         </div>
       </div>
